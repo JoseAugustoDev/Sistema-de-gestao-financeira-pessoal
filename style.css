@@ -22,9 +22,9 @@ body, .container {
 
 header {
     width: 100%;
-    height: 15%;
+    height: 10%;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
 }
 
@@ -34,7 +34,7 @@ header nav {
     color: #fff;
     align-items: center;
     list-style-type: none;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 header nav li {
@@ -44,63 +44,81 @@ header nav li {
 
 main {
     width: 100%;
-    height: 75%;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* justify-content: center; */
 }
 
 main section {
     width: 100%;
-    height: 25%;
+    height: 30%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}   
+
+.tool-bar {
+    width: 60%;
+    height: 15%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.tool-bar button {
+    border: 0;
+    width: 15%;
+    height: 33%;
+    color: #fff;
+    padding: 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    background-color: #560fe4;
+    box-shadow: 17px 10px 19px 0px rgba(0,0,0,0.33);
 }
 
 .box-entrada, .box-saida, .box-saldo {
     width: 20%;
-    height: 75%;
+    height: 25%;
     margin: 1rem;
     display: flex;
-    padding: 1rem;
+    padding: 2rem;
+    align-items: center;
     font-weight: bolder;
-    /* align-items: center; */
-    justify-content: space-around;
-    flex-direction: column;
     border-radius: 1rem;
     background-color: #fff;
     box-shadow: 17px 10px 19px 0px rgba(0,0,0,0.33);
     
 }
 
-.box-entrada p, .box-saida p, .box-saldo p{
-    font-size: 2.5rem;
-    font-weight: 500;
+.box-entrada h1, .box-entrada p {
+    color: #22D629;
 }
 
-/* .box-entrada {
-    background-color: #aea;
+.box-saida h1, .box-saida p {
+    color: #E91515;
 }
 
-.box-saida {
-    background-color: #f32;
+.box-saldo h1, .box-saldo p {
+    color: #3315E9;
 }
-
-.box-saldo {
-    background-color: #ce7420;
-} */
 
 .titulo-box {
     width: 100%;
-    height: 20%;
+    height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
 }
 
 .titulo-box p, .titulo-box h1 {
-    font-weight: 400;
+    font-weight: 800;
     font-size: 2rem;
+}
+
+#setaEntrada, #setaSaida, #starSaldo {
+    height: 33%;
 }
