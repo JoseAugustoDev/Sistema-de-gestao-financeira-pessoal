@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
     <title>Financas</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
         <header>
             <nav>
                 <li>Menu</li>
-                <li>Ola, Jose Augusto!</li>
+                <li class="saudacao"></li>
                 <li>Icon</li>
             </nav>
         </header>
@@ -21,7 +22,7 @@
                 <div class="box-entrada">
                     <div class="titulo-box">
                         <h1>Entradas</h1>
-                        <p>R$ 12.000,00</p>
+                        <p class="entrada-input"></p>
                     </div>
 
                     <img id="setaEntrada" src="img/setaEntrada.png" alt="">
@@ -31,7 +32,7 @@
                 <div class="box-saida">
                     <div class="titulo-box">
                         <h1>Saídas</h1>
-                        <p>R$ 3.500,00</p>
+                        <p class="saida-input"></p>
                     </div>
                     
                     <img id="setaSaida" src="img/setaSaida.png" alt="">
@@ -41,7 +42,7 @@
                 <div class="box-saldo">
                     <div class="titulo-box">
                         <h1>Saldo</h1>
-                        <p>R$ 8.500,00</p>
+                        <p class="saldo-input"></p>
                     </div>
                     
                     <img id="starSaldo" src="img/starSaldo.png" alt="">
@@ -49,8 +50,8 @@
             </section>
 
             <section class="tool-bar">
-                <button>Adicionar</button>
-                <button>Excluir</button>
+                <button class="input-entrada">Adicionar Entrada</button>
+                <button class="input-saida">Adicionar Saida</button>
                 <button>Editar</button>
                 <button>Visualizar</button>
             </section>
