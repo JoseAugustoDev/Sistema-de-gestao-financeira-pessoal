@@ -50,8 +50,65 @@
             </section>
 
             <section class="tool-bar">
-                <button class="input-entrada">Adicionar Entrada</button>
-                <button class="input-saida">Adicionar Saida</button>
+                <button id="open-modal">Adicionar Entrada</button>
+
+                <dialog id="modal">
+                    <div class="titulo-modal">
+                        <h1>Adicionar Entrada</h1>
+                    </div>
+                    <div class="form-modal-entrada">
+                        <div class="form-entrada">
+                            <textarea name="descricao-entrada" id="descricao-entrada" cols="15" rows="1" placeholder="Descrição"></textarea>
+                            <input type="number" name="entrada" id="valor-entrada" placeholder="Digite o valor da entrada: ">
+                            <input type="date" name="data" id="data">
+                        </div>
+
+                        <div class="tags">
+                            <select name="tags" id="tags">
+                                <option value="#">--Selecione a Tag--</option>
+                                <option value="salario">Salario</option>
+                                <option value="investimento">Retorno Investimento</option>
+                                <option value="pro-labore">Pro-labore</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="buttons">
+                        <button class="input-entrada" >Adicionar</button>
+                        <button id="close-modal">Fechar</button>
+                    </div>
+                </dialog>
+
+                <button id="open-modal" class="open-modal-saida">Adicionar Saida</button>
+
+                <dialog id="modal" class="modal-saida">
+                    <div class="titulo-modal">
+                        <h1>Adicionar Saida</h1>
+                    </div>
+                    <div class="form-modal-saida">
+                        <div class="form-saida">
+                            <textarea name="descricao-saida" id="descricao-saida" cols="15" rows="1" placeholder="Descrição"></textarea>
+                            <input type="number" name="saida" id="valor-saida" placeholder="Digite o valor da saida: ">
+                            <input type="date" name="data" id="data">
+                        </div>
+
+                        <div class="tags">
+                            <select name="tags" id="tags">
+                                <option value="#">--Selecione a Tag--</option>
+                                <option value="pagamentos">Pagamentos</option>
+                                <option value="alimentacao">Alimentacao</option>
+                                <option value="entretenimento">Entretenimento</option>
+                                <option value="saude">Saude</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="buttons">
+                        <button class="input-saida">Adicionar</button>
+                        <button class="close-modal-saida" id="close-modal">Fechar</button>
+                    </div>
+                </dialog>
+
                 <button>Editar</button>
                 <button>Visualizar</button>
             </section>
