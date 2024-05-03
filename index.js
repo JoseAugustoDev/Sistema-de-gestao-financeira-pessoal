@@ -1,9 +1,9 @@
 let nome_usuario = prompt("Qual seu Nome? ");
 
 const saudacao = document.querySelector(".saudacao");
-const saida = document.querySelector(".saida-input");
-const saldo = document.querySelector(".saldo-input");
-const entrada = document.querySelector(".entrada-input");
+const field_saida = document.querySelector(".saida-input");
+const field_saldo = document.querySelector(".saldo-input");
+const field_entrada = document.querySelector(".entrada-input");
 const adicionar_saida = document.querySelector(".input-saida");
 const adicionar_entrada = document.querySelector(".input-entrada");
 
@@ -22,16 +22,6 @@ closeModalButton.addEventListener("click", () => {
 saudacao.innerHTML = "Olá, " + nome_usuario + "!";
 
 var aux = 0;
-var saldo_atualizado = 0;
-
-adicionar_entrada.addEventListener('click', () => {
-    const valor_entrada = parseFloat(document.querySelector('#valor-entrada').value);
-
-    saldo_atualizado += valor_entrada;
-    
-    entrada.innerHTML = "R$ " + saldo_atualizado + ",00";
-
-})
 
 const modal_saida = document.querySelector(".modal-saida");
 const openModalButton_saida = document.querySelector(".open-modal-saida");
@@ -45,14 +35,61 @@ closeModalButton_saida.addEventListener("click", () => {
     modal_saida.style = "display: none;"
 });
 
-adicionar_saida.addEventListener('click', () => {
-    var valor_saida = parseFloat(document.querySelector('#valor-saida').value);
+class Conta {
+    constructor(nome, entrada, saida, saldo) {
+        this.nome = nome;
+        this.entrada = entrada;
+        this.saida = saida;
+        this.saldo = saldo;
+        
+        this.adicionarEntrada = function () {
+            const valor_entrada = parseFloat(document.querySelector('#valor-entrada').value);
+            
+            this.entrada += valor_entrada;
+            
+            modal.style = "display: none;"
+            
+            field_entrada.innerHTML = "R$ " + this.entrada + ",00";
+            
+            return this.entrada;
+        }
 
-    saldo_atualizado -= valor_saida;
+        this.adicionarSaida = function () {
+            var valor_saida = parseFloat(document.querySelector('#valor-saida').value);
+            
+            aux += valor_saida
+            
+            this.saida += valor_saida;
+            
+            modal_saida.style = "display: none;"
+            
+            field_saida.innerHTML = "R$ " + this.saida + ",00";
+            
+            return aux;
+        }
 
-    aux += valor_saida
-    
-    saida.innerHTML = "R$ " + aux + ",00";
-    saldo.innerHTML = "R$ " + saldo_atualizado + ",00"
-    
+        this.mostrarSaldo = function () {
+            
+            aux += this.saida;
+            
+            this.saldo = this.entrada - this.saida;
+            
+            field_saldo.innerHTML = "R$ " + this.saldo + ",00";
+            
+            return this.saldo;
+        }
+    }
+
+}
+
+const pessoa = new Conta(nome_usuario, 0, 0, 0);
+
+adicionar_entrada.addEventListener("click", () => {
+    pessoa.adicionarEntrada();
+    pessoa.mostrarSaldo();
+})
+
+adicionar_saida.addEventListener("click", () => {
+    pessoa.adicionarSaida();
+    pessoa.mostrarSaldo();
 })

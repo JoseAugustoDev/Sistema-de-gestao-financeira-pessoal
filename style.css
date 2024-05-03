@@ -17,7 +17,7 @@ body, .container {
 
 .container {
     background: rgb(255,255,255);
-    background: linear-gradient(360deg, rgba(255,255,255,1) 75%, #560fe4 75%);
+    background: linear-gradient(360deg, rgb(28, 194, 111) 25%, #0fe433 75%);
 }
 
 header {
@@ -31,7 +31,7 @@ header {
 header nav {
     width: 100%;
     display: flex;
-    color: #fff;
+    color: #3315E9;
     align-items: center;
     list-style-type: none;
     justify-content: space-around;
@@ -76,7 +76,7 @@ main section {
     margin: 0.5rem;
     cursor: pointer;
     border-radius: 1rem;
-    background-color: #560fe4;
+    background-color: #3315E9;
     box-shadow: 17px 10px 19px 0px rgba(0,0,0,0.33);
 }
 
