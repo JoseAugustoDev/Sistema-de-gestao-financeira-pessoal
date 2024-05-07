@@ -74,7 +74,7 @@
 
                     </div>
                     <div class="buttons">
-                        <button class="input-entrada">Adicionar</button>
+                        <button class="input-entrada" onclick="pegarValores(0);">Adicionar</button>
                         <button id="close-modal">Fechar</button>
                     </div>
                 </dialog>
@@ -89,11 +89,11 @@
                         <div class="form-saida">
                             <textarea name="descricao-saida" id="descricao-saida" cols="15" rows="1" placeholder="Descrição"></textarea>
                             <input type="number" name="saida" id="valor-saida" placeholder="Digite o valor da saida: ">
-                            <input type="date" name="data" id="data">
+                            <input type="date" name="data" id="data" class="data-saida">
                         </div>
 
                         <div class="tags">
-                            <select name="tags" id="tags">
+                            <select name="tags" id="tags" class="tags-saida">
                                 <option value="#">--Selecione a Tag--</option>
                                 <option value="pagamentos">Pagamentos</option>
                                 <option value="alimentacao">Alimentacao</option>
@@ -104,13 +104,29 @@
 
                     </div>
                     <div class="buttons">
-                        <button class="input-saida">Adicionar</button>
+                        <button class="input-saida" onclick="pegarValores(1);">Adicionar</button>
                         <button class="close-modal-saida" id="close-modal">Fechar</button>
                     </div>
                 </dialog>
 
                 <button>Editar</button>
                 <button>Visualizar</button>
+            </section>
+
+            <section class="tabela">
+                <table class="tabela-itens">
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                            <th>Tag</th>
+                        </tr>
+                    </thead>
+                    <tbody class="corpo-itens">
+                        
+                    </tbody>
+                </table>
             </section>
         </main>
     </div>

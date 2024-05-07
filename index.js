@@ -12,11 +12,11 @@ const openModalButton = document.getElementById("open-modal");
 const closeModalButton = document.getElementById("close-modal");
 
 openModalButton.addEventListener("click", () => {
-    modal.style = "display: flex;"
+    modal.style = "display: flex;";
 });
 
 closeModalButton.addEventListener("click", () => {
-    modal.style = "display: none;"
+    modal.style = "display: none;";
 });
 
 saudacao.innerHTML = "Olá, " + nome_usuario + "!";
@@ -28,11 +28,11 @@ const openModalButton_saida = document.querySelector(".open-modal-saida");
 const closeModalButton_saida = document.querySelector(".close-modal-saida");
 
 openModalButton_saida.addEventListener("click", () => {
-    modal_saida.style = "display: flex;"
+    modal_saida.style = "display: flex;";
 });
 
 closeModalButton_saida.addEventListener("click", () => {
-    modal_saida.style = "display: none;"
+    modal_saida.style = "display: none;";
 });
 
 class Conta {
@@ -81,6 +81,81 @@ class Conta {
     }
 
 }
+
+let item = {};
+let itens = [];
+
+function pegarValores(flag) {
+    
+    var item_valor = 0;
+    var item_desc = "";
+    var item_data = new Date();
+    var item_tag = "";
+    
+    if (flag == 0) {
+        item_desc = document.querySelector("#descricao-entrada").value; 
+        item_valor = document.querySelector("#valor-entrada").value;
+        item_data = document.querySelector("#data").value;
+        item_tag = document.querySelector("#tags").value;
+    } else {
+        item_desc = document.querySelector("#descricao-saida").value; 
+        item_valor = document.querySelector("#valor-saida").value;
+        item_data = document.querySelector(".data-saida").value;
+        item_tag = document.querySelector(".tags-saida").value;
+    }
+
+    
+    item = {
+        itemDescricao: item_desc,
+        itemValor: item_valor,
+        itemData: item_data,
+        itemTag: item_tag
+    }
+
+    itens.unshift(item);
+
+    return mostrarTabela(itens);
+}
+
+function mostrarTabela(itens) {
+    
+    let tabela = document.querySelector(".tabela-itens");
+    let corpo_itens = document.querySelector(".corpo-itens");
+    
+    itens.map(item => {
+
+        var linha = document.createElement("tr");
+
+        for (let i = 0; i < 4; i++) {
+            var cell = document.createElement("td");
+
+            if (i == 0) {
+                cell.textContent = item.itemDescricao;
+            } else if (i == 1) {
+                cell.textContent = item.itemValor;
+            } else if (i == 2) {
+                cell.textContent = item.itemData;
+            } else if (i == 3) {
+                cell.textContent = item.itemTag;
+            }
+
+            linha.appendChild(cell);
+        }
+
+        corpo_itens.appendChild(linha);
+
+        console.log(item.itemDescricao);
+        console.log(item.itemValor);
+        console.log(item.itemData);
+        console.log(item.itemTag);
+    })
+
+    tabela.appendChild(corpo_itens);
+
+    itens.pop();
+
+}
+
 
 const pessoa = new Conta(nome_usuario, 0, 0, 0);
 

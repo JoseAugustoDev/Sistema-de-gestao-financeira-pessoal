@@ -17,7 +17,7 @@ body, .container {
 
 .container {
     background: rgb(255,255,255);
-    background: linear-gradient(360deg, rgb(28, 194, 111) 25%, #0fe433 75%);
+    background: linear-gradient(360deg, rgb(255, 255, 255) 75%, #3315E9 25%);
 }
 
 header {
@@ -31,7 +31,7 @@ header {
 header nav {
     width: 100%;
     display: flex;
-    color: #3315E9;
+    color: #ffffff;
     align-items: center;
     list-style-type: none;
     justify-content: space-around;
@@ -52,7 +52,7 @@ main {
 
 main section {
     width: 100%;
-    height: 30%;
+    height: 33%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -60,8 +60,8 @@ main section {
 }   
 
 .tool-bar {
-    width: 60%;
-    height: 15%;
+    width: 75%;
+    height: 33%;
     display: flex;
     align-items: start;
     justify-content: center;
@@ -70,7 +70,7 @@ main section {
 .tool-bar button {
     border: 0;
     width: 15%;
-    height: 33%;
+    height: 15vh;
     color: #fff;
     padding: 1rem;
     margin: 0.5rem;
@@ -82,13 +82,13 @@ main section {
 
 .box-entrada, .box-saida, .box-saldo {
     width: 20%;
-    height: 25%;
+    height: 33%;
     margin: 1rem;
-    display: flex;
     padding: 2rem;
+    display: flex;
+    border-radius: 1rem;
     align-items: center;
     font-weight: bolder;
-    border-radius: 1rem;
     background-color: #fff;
     box-shadow: 17px 10px 19px 0px rgba(0,0,0,0.33);
     
@@ -120,25 +120,26 @@ main section {
 }
 
 #setaEntrada, #setaSaida, #starSaldo {
-    height: 33%;
+    height: 50%;
 }
 
 #modal {
     width: 33%;
     height: 50%;
+    border: none;
+    padding: 2rem;
     display: flex;
     border-radius: 10px;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    border: 1px solid black;
-    padding: 2rem;
+    box-shadow: 10px 10px 80px 0px rgba(0,0,0,0.50);
 
+    z-index: 1;
+    display: none;   
     align-self: center;
     justify-self: center;
     background-color: rgba(255, 255, 255, 1);
-    display: none;   
-    z-index: 1;
 }
 
 .form-modal-entrada {
@@ -152,13 +153,13 @@ main section {
 }
 
 .form-modal-entrada input, .form-modal-entrada textarea {
-    width: 50%;
+    width: 72%;
     height: 20%;
     margin: 1rem;
     padding: 0.5rem;
     text-align: center;
     align-self: center;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     border: 1px solid black;
 }
 
@@ -172,10 +173,10 @@ input[type=number]::-webkit-inner-spin-button {
     justify-content: center;
 }
 
-.tags select {
-    width: 50%;
+#tags {
+    width: 75%;
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .titulo-modal {
@@ -219,13 +220,13 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .form-modal-saida input, .form-modal-saida textarea {
-    width: 50%;
+    width: 72%;
     height: 20%;
     margin: 1rem;
     padding: 0.5rem;
     text-align: center;
     align-self: center;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     border: 1px solid black;
 }
 
@@ -235,10 +236,10 @@ input[type=number]::-webkit-inner-spin-button {
     justify-content: center;
 }
 
-.tags select {
-    width: 50%;
+#tags {
+    width: 75%;
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 
@@ -263,3 +264,33 @@ input[type=number]::-webkit-inner-spin-button {
     height: 75%;
 
 }
+
+/* ------------------------------------------------- */
+
+.tabela {
+    width: 100%;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    /* background-color: #8776f0; */
+}
+
+.tabela-itens {
+    width: 75%;
+    height: 100%;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabela-itens tr {
+    width: 100%;
+    text-align: center;
+
+}
+
+.tabela-itens td {
+    width: 25%;
+    border: 3px solid rgb(0, 0, 0);
+}
+
